@@ -17,7 +17,15 @@ int printTriangle(int size) {
   //when you finish counting on i, 
 
   //your answer is starCount
-
+    int starCount = 0;
+    for(int i = 1;i <= size;i++){
+        for(int j =1; j <= i;j++){
+            printf("*");
+            starCount = starCount+1
+        }
+    printf("\n");
+    }
+    return starCount;
 }
 
 
