@@ -30,29 +30,17 @@ typedef struct rec_tag rectangle;
 
 rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION
-  if (r.width>=0 && r.height>=0)
+  if (r.width<0)
   {
-    continue;
+    r.x = r.x +r.width;
+    r.width = 0-r.width;
   }
-  else if (r.width>=0 && r.height <0)
+  if (r.height = 0)
   {
     r.y = r.y + r.height;
-    r.height = (r.height)*(-1);
+    r.height = 0 - r.height;
   }
-  else if (/* condition */r.width<0 && r.height>=0)
-  {
-    /* code */
-    r.x = r.x +r.width;
-    r.width = (-1)*r.width;
-  }
-  else
-  {
-    /* code */
-    r.y = r.y + r.height;
-    r.x = r.x +r.width;
-    r.height = (r.height)*(-1);
-    r.width = (-1)*r.width;
-  }
+
   return r;
 }
 
