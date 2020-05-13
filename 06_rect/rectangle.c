@@ -22,7 +22,7 @@ struct rect_tag{
   int width;
   int height;
 };
-typedef struct rec_tag rectangle;
+typedef struct rect_tag rectangle;
 
 
 
@@ -35,7 +35,7 @@ rectangle canonicalize(rectangle r) {
     r.x = r.x +r.width;
     r.width = 0-r.width;
   }
-  if (r.height = 0)
+  if (r.height < 0)
   {
     r.y = r.y + r.height;
     r.height = 0 - r.height;
