@@ -9,10 +9,10 @@ struct _retire_info{
 };
 typedef struct _retire_info  retire_info;
 
-void retirement(int start_age, double intial, retire_info working, retire_info retired)
+void retirement(int startAge, double intial, retire_info working, retire_info retired)
 {
     double current_blance = intial;
-    int age = start_age;
+    int age = startAge;
     for (int i = 0;i < working.months; i++)
     {
         printf("Age %3d month %2d you have $%.2lf\n" , age/12, age%12, current_blance);
