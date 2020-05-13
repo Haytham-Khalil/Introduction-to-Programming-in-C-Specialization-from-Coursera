@@ -21,4 +21,12 @@ aaaaaa aaaaa
 bbbbb bbbbbb
 aaaaa aaaaa
 aaa a bbbbb
-
+aaaab bbbbc ddddd
+&^%$# *&^%$
+aabbc lmddd
+----- ~~~~~
+||||| &&&&&
+""""" '''''
+aaaaa 
+NULL 00000
+%%&*( 01234
