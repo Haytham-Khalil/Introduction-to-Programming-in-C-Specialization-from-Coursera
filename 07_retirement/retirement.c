@@ -2,14 +2,14 @@
 #include<stdlib.h>
 
 
-struct retire_info{
+struct _retire_info{
     int months;
     double contribution;
     double rate_of_return;
 };
-typedef struct retire_info  retire_information;
+typedef struct _retire_info  retire_info;
 
-void retirement(int start_age, double intial, retire_information working, retire_information retired)
+void retirement(int start_age, double intial, retire_info working, retire_info retired)
 {
     double current_blance = intial;
     int age = start_age;
@@ -32,8 +32,8 @@ void retirement(int start_age, double intial, retire_information working, retire
 
 int main(void){
 
-    retire_information working_period;
-    retire_information retired_period;
+    retire_info working_period;
+    retire_info retired_period;
 
     working_period.months = 489;
     working_period.contribution = 1000;
