@@ -9,9 +9,9 @@ struct _retire_info{
 };
 typedef struct _retire_info  retire_info;
 
-void retirement(int startAge, double intial, retire_info working, retire_info retired)
+void retirement (int startAge, double initial,  retire_info working,  retire_info retired)
 {
-    double current_blance = intial;
+    double current_blance = initial;
     int age = startAge;
     for (int i = 0;i < working.months; i++)
     {
