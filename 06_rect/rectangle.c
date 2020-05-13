@@ -55,14 +55,12 @@ rectangle intersection(rectangle r1, rectangle r2) {
   r_intersect.y = max(r1.y,r2.y);
   r_intersect.width = min(r1.x+r1.width,r2.x+r2.width)-r_intersect.x;
   r_intersect.height = min(r1.y+r1.height,r2.y+r2.height) - r_intersect.y;
-  if (r_intersect.width<0 )
+  if (r_intersect.width<0 || r_intersect.height<0 )
   {
     r_intersect.width = 0;
-  }
-  if (r_intersect.height<0)
-  {
     r_intersect.height =0;
   }
+
   return r_intersect;
 }
 
