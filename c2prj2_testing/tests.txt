@@ -48,3 +48,6 @@ Kc Qc 2s 7d Jc 0c 9c; As Qs Js 7d 0s 9s 2h
 Kc Qc 2s 7d Jc 0c 9c; 5c 4c 9h 3c 2c Ac 5c
 Kc Qc 2s 7d Jc 0c 9c; 2c 4c 8h 9c 5s 6c 0c
 Ac Kc Qd Jd 0d 5d 4d; Kc Qc 2s 7d Jc 0c 9c
+Kc Qc 2s 7d Jc 0c 9c; 2c 4c 8d 9h 5c 6c 0c
+Kc Qc 2s 7d Jc 0c 9c; Kd Qc 2s 7d Jh 0s 9c
+
