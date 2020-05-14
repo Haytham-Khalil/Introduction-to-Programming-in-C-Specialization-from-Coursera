@@ -50,4 +50,4 @@ Kc Qc 2s 7d Jc 0c 9c; 2c 4c 8h 9c 5s 6c 0c
 Ac Kc Qd Jd 0d 5d 4d; Kc Qc 2s 7d Jc 0c 9c
 Kc Qc 2s 7d Jc 0c 9c; 2c 4c 8d 9h 5c 6c 0c
 Kc Qc 2s 7d Jc 0c 9c; Kd Qc 2s 7d Jh 0s 9c
-
+Jc 0c 9s 8s 7s 6s 5s; Jc 0s 9s 8s 7s 6c 5s
