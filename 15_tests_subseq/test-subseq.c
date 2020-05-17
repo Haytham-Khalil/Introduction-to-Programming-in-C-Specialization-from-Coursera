@@ -25,6 +25,10 @@ int main (void)
     int array5[] = { 1, 3, 3, 3, 3, 3, 2, 4, 6, 9};
     int max5 = maxSeq(array5,10);
     if (max5!=4){return EXIT_FAILURE;}   
- 
+
+    int array6[] = {-5,-3,-2,0,1,2,3,2,9};
+    int max6 = maxSeq(array6,9);
+    if (max6!=7){return EXIT_FAILURE;}   
+
     return EXIT_SUCCESS;
 }
