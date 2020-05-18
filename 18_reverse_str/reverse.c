@@ -4,6 +4,7 @@
 
 void reverse(char * str) {
   //WRITE ME!
+if (str == NULL) return;
 int str_length = strlen(str);
 
 char str_copy[str_length+1];
@@ -14,6 +15,7 @@ for (int i =0;i<str_length;i++)
   str[i] = str_copy[str_length-1-i];
 }
 str[str_length] = '\0';
+return;
 }
 
 int main(void) {
