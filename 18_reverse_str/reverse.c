@@ -6,7 +6,7 @@ void reverse(char * str) {
   //WRITE ME!
 int str_length = strlen(str);
 
-char str_copy[str_length];
+char str_copy[str_length+1];
 strncpy(str_copy, str, str_length+1);
 
 for (int i =0;i<str_length;i++)
