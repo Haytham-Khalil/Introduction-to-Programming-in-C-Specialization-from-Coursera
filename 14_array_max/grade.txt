@@ -1,4 +1,4 @@
-Grading at Tue May 19 16:23:57 UTC 2020
+Grading at Tue May 19 16:29:35 UTC 2020
 Attempting to compile arrayMax.c 
 #################################################
 testcase1:
