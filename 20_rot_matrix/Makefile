@@ -5,4 +5,4 @@ rotate.o: rotate.c
 	gcc $(CFLAGS) -c rotate.c
 .PHONY: clean
 clean:
-	rm -f test *.o *.c~ *.h~
+	rm -f test rotate.o *.c~ *.h~
