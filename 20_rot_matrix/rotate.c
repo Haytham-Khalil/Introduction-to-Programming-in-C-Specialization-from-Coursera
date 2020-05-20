@@ -20,7 +20,7 @@ void rotate(char matrix[10][10])
     {
         for (int l =0; l<10;l++)
         {
-            matrix[l][k] = temp[count];
+            matrix[l][9-k] = temp[count];
             count++;
         }
     }
