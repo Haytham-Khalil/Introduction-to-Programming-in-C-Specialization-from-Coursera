@@ -8,7 +8,7 @@ int main(void){
 
     ans = power(0,0);
     if (ans!=1){ return EXIT_FAILURE;}
-    ans = power(0,5);
+    ans = power(0,1);
     if (ans!=0){return EXIT_FAILURE;}
     ans = power(0,10);
     if (ans!=0)
