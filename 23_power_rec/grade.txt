@@ -1,0 +1,16 @@
+Grading at Fri May 22 20:42:45 UTC 2020
+Attempting to compile power.c
+power.c: In function ‘power’:
+power.c:11:14: error: too few arguments to function ‘power’
+     return x*power(y-1);
+              ^
+power.c:4:10: note: declared here
+ unsigned power (unsigned x, unsigned y)
+          ^
+power.c:12:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+The code did not compile!
+
+Overall Grade: F
