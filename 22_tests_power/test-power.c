@@ -19,7 +19,7 @@ int main(void){
     ans = power(10,0);
     if (ans!=1){ return EXIT_FAILURE;}
     ans = power(1,0);
-    if (ans!=0){ return EXIT_FAILURE;}
+    if (ans!=1){ return EXIT_FAILURE;}
 
 
     ans = power(2,31);
