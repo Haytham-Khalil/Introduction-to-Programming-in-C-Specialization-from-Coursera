@@ -27,7 +27,8 @@ int main(void){
     
     ans = power(5,5);
     if (ans!=3125){ return EXIT_FAILURE;}
-
+    ans = power(2*3,2);
+    if (ans!=36){ return EXIT_FAILURE;}
 
     return EXIT_SUCCESS;
 }
