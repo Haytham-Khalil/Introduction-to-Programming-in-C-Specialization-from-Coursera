@@ -30,6 +30,9 @@ int main(void){
     ans = power(2*3,2);
     if (ans!=36){ return EXIT_FAILURE;}
 
+    ans = power(10,5);
+    if (ans !=100000){return EXIT_FAILURE;}
+
     return EXIT_SUCCESS;
 }
 
