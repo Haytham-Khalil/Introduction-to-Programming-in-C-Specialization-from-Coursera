@@ -8,5 +8,5 @@ unsigned power (unsigned x, unsigned y)
         return 1;
     }
 
-    return x*power(y-1);
+    return x*power(x,y-1);
 }
