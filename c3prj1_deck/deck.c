@@ -31,25 +31,20 @@ int deck_contains(deck_t * d, card_t c) {
    which are not in any player's hand).*/
    int hand_size = d->n_cards;
    card_t ** index = d->cards;
-   int result = 1;
    card_t current_card;
    for (int i =0;i<hand_size;i++)
    {
      current_card = **index;
      if ((current_card.suit == c.suit) &(current_card.value == c.value))
      {
-       result =1;
+       return 1;
      }
-     else
-     {
-       result =0;
-       break;
-     }
+
      index++;
    }
 
 
-  return result;
+  return 0;
 }
 
 void shuffle(deck_t * d){
