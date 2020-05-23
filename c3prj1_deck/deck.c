@@ -31,6 +31,7 @@ int deck_contains(deck_t * d, card_t c) {
    which are not in any player's hand).*/
    int hand_size = d->n_cards;
    card_t ** index = d->cards;
+
    card_t current_card;
    for (int i =0;i<hand_size;i++)
    {
