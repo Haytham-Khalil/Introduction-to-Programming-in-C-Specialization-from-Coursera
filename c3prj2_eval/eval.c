@@ -116,7 +116,7 @@ unsigned get_largest_element(unsigned * arr, size_t n) {
   unsigned largest = arr[0];
   for (int i =0; i<n;i++)
   {
-    if (arr[i]>=largest)
+    if (arr[i]>largest)
     {
       largest = arr[i];
     }
