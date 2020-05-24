@@ -319,7 +319,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
   }
   for (size_t j=0;j<idx;j++)
   {
-    ans.cards[count] = *(card_in_hand+j);
+    ans.cards[j+n] = *(card_in_hand+j);
     count++;
     if (count==5){break;}
   }
