@@ -253,8 +253,10 @@ ssize_t  find_secondary_pair(deck_t * hand,
         card_curr_value = (**(hand_card+j)).value ;
         count2++;
       }
+    }
    if (count2==5){return 1;}
    else {return 0;}
+ 
  }
 
 
