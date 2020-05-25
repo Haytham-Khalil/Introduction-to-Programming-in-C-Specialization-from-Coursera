@@ -18,13 +18,13 @@ int decrypt(FILE *f)
     int index=0;
     for (int i =0; i<256;i++)
     {
-        if (array_char[i]>array_char[index])
+        if (array_char[i]>=array_char[index])
         {
             index =i;
         }
     }
     int temp = index -'a';
-    if (temp>=1 && temp <=3)
+    if (temp>=0 && temp <=3)
     {
         key = 22 +temp;
     }
