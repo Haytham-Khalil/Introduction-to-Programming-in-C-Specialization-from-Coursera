@@ -2,20 +2,21 @@
 #include<stdlib.h>
 #include<ctype.h>
 
-int decrypt(File *f)
+int decrypt(FILE *f)
 {
     int key = 0;
     char array_char[256]={0};
     char c;
-    while (c=fgetc(f)!= EOF)
+    while ((c=fgetc(f))!= EOF)
     {
         if(isalpha(c))
         {
-            array_char[c] = array_char[c]+1;
+            int idx = c;
+            array_char[idx] = array_char[idx]+1;
         }
     }
-    char index=0;
-    for (char i =0; i<256;i++)
+    int index=0;
+    for (int i =0; i<256;i++)
     {
         if (array_char[i]>=array_char[index])
         {
@@ -41,10 +42,10 @@ int main(int argc,char ** argv)
 {
     if (argc !=2)
     {
-        fprintf(stderr,"not enough arguments\n")
+        fprintf(stderr,"not enough arguments\n");
         return EXIT_FAILURE;
     }
-    FILE *f = fopen(argv[i],"r");
+    FILE *f = fopen(argv[1],"r");
     if (f==NULL){
         perror("Could not open file");
         return EXIT_FAILURE;
