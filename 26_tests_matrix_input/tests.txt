@@ -2,5 +2,7 @@ input1.txt
 input2.txt
 input3.txt
 input4.txt
+input5.txt
+input6.txt
 input10.txt
 3 input1.txt
