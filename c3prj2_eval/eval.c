@@ -243,11 +243,16 @@ ssize_t  find_secondary_pair(deck_t * hand,
    }
    if ((idx2== 0)||idx2>3) {return 0;}
    count2++;
-   for (size_t l=idx2;l<size-1;l++)
-   {
-      if ((**(hand_card+l)).value ==(**(hand_card+l+1)).value){continue;}
-      if ((**(hand_card+l)).value-1 == (**(hand_card+l+1)).value && (**(hand_card+l+1)).suit == fs){count2++;}
-   }
+   unsigned card_curr_value = (**(hand_card+idx2)).value;
+   for (size_t j=idx2+1;j<size;j++)
+    {
+      //Ac As Kc Ks Qs Js 0s 2---6
+      if ((**(hand_card+j)).suit != fs){continue;}
+      if ((**(hand_card+j)).value == card_curr_value -1)
+      {
+        card_curr_value = (**(hand_card+j)).value ;
+        count++;
+      }
    if (count2==5){return 1;}
    else {return 0;}
  }
@@ -270,8 +275,8 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
     -1 if an Ace-low straight was found at that index (and that index is the Ace)
      0  if no straight was found at that index
      1  if any other straight was found at that index*/
-//As Jd 9h 8c 7d 6c 5d 
-//Kh Qh Jh 0h 9h 8h 7h 
+
+//Ac As Kc Ks Qs Js 0s 
   if (is_ace_low_straight_at(hand,index,fs)==1){return -1;}
   int count = 1;
   // for fs =NUM
@@ -291,11 +296,17 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   else
   {
     if ((**(hand_card+index)).suit != fs ){return 0;}
-    for (size_t j=index;j<size-1;j++)
+    unsigned card_curr_value = (**(hand_card+index)).value;
+    for (size_t j=index+1;j<size;j++)
     {
-      //As Ac Ks Kc Qh Js 0s
-      if ((**(hand_card+j)).value ==(**(hand_card+j+1)).value){continue;}
-      if ((**(hand_card+j)).value-1 == (**(hand_card+j+1)).value && (**(hand_card+j+1)).suit == fs){count++;}
+      //Ac As Kc Ks Qs Js 0s 2---6
+      if ((**(hand_card+j)).suit != fs){continue;}
+      if ((**(hand_card+j)).value == card_curr_value -1)
+      {
+        card_curr_value = (**(hand_card+j)).value ;
+        count++;
+      }
+
     }
     if(count>=5){return 1;}
     else {return 0;}
