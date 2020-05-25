@@ -142,6 +142,7 @@ size_t get_match_index(unsigned * match_counts, size_t n,unsigned n_of_akind){
       if (match_counts[i] == n_of_akind)
       {
         index =i;
+        break;
       }
     }
   assert (index !=-1);
@@ -307,7 +308,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 				  hand_ranking_t what,
 				  size_t idx) {
 
-  /*hand_eval_t ans;
+  hand_eval_t ans;
   ans.ranking = what;
   card_t ** card_in_hand = hand->cards;
   size_t hand_size = hand->n_cards;
@@ -331,30 +332,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
       count++;
       if (count==5){break;}
     }
-  }*/
-  hand_eval_t ans;
-  card_t**card = hand -> cards;
-  unsigned count =n;
- 
-  ans.ranking = what;
-  
-  for(size_t i=0 ; i< n ; i++){
-    ans.cards[i] = *(card +idx+i);
   }
-  if (n < 5){
-    for(size_t i=0 ; i< idx ; i++){  
-      ans.cards[i+n] = *(card +i);
-       count ++;
-      if (count == 5 )  break;
-    }
-    if (count < 5){
-      for (size_t i=n+idx ; i < hand -> n_cards+1 ; i++ ){
-	ans.cards[count]=*(card +i);
-	count ++;
-	if (count >= 5) break;}
-    }
-  }
-
 
   return ans;
 }

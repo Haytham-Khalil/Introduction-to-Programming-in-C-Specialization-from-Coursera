@@ -14,9 +14,8 @@ void print_hand(deck_t * hand){
    card_t ** index = hand->cards;
    for (int i =0;i<hand_size;i++)
    {
-     print_card(**index);
+     print_card(**(index+i);
      printf(" ");
-     index++;
    }
 }
 
@@ -35,13 +34,11 @@ int deck_contains(deck_t * d, card_t c) {
    card_t current_card;
    for (int i =0;i<hand_size;i++)
    {
-     current_card = **index;
+     current_card = **(index+i);
      if ((current_card.suit == c.suit) &(current_card.value == c.value))
      {
        return 1;
      }
-
-     index++;
    }
 
 
