@@ -14,7 +14,7 @@ void print_hand(deck_t * hand){
    card_t ** index = hand->cards;
    for (int i =0;i<hand_size;i++)
    {
-     print_card(**(index+i);
+     print_card(**(index+i));
      printf(" ");
    }
 }
