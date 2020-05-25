@@ -217,13 +217,19 @@ ssize_t  find_secondary_pair(deck_t * hand,
     }
     if ((idx_temp==0)||idx_temp>3) {return 0;}
     count++;
+    //A A 5 5 4 3 2 
     // check whether 4 3 2 is follwoing 5
-    for (size_t j = idx_temp;j<size-1;j++)
+    unsigned current_card_value = (**(hand_card+idx_temp)).value;
+    for (size_t m =idx_temp;m<size;m++)
     {
-      if ((**(hand_card+j)).value ==(**(hand_card+j+1)).value){continue;}
-      if ((**(hand_card+j)).value-1 == (**(hand_card+j+1)).value){count++;}
+      if ((**(hand_card+m)).value == current_card_value){continue;}
+      if ((**(hand_card+m)).value == current_card_value -1)
+      {
+        current_card_value = (**(hand_card+m)).value ;
+        count++;
+      }
     }
-    if (count ==5){return 1;}
+    if (count>=5){return 1;}
     else {return 0;}
    }
 
@@ -277,8 +283,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
     -1 if an Ace-low straight was found at that index (and that index is the Ace)
      0  if no straight was found at that index
      1  if any other straight was found at that index*/
-
-//Ac As Kc Ks Qs Js 0s 
+//As Jd 9h 8c 7d 6c 5d 
   if (is_ace_low_straight_at(hand,index,fs)==1){return -1;}
   int count = 1;
   // for fs =NUM
@@ -286,13 +291,20 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   size_t size = hand->n_cards;
   if (fs == NUM_SUITS)
   {
-    for (size_t i = index;i< size -1;i++)
+    unsigned card_curr_value1 = (**(hand_card+index)).value;
+    for (size_t i=index;i<size;i++)
     {
-      if ((**(hand_card+i)).value ==(**(hand_card+i+1)).value){continue;}
-      if ((**(hand_card+i)).value-1 == (**(hand_card+i+1)).value) {count++;}
+      //Ac As Kc Ks Qs Js 0s 2---6
+      //As Jd 9h 8c 7d 6c 5d 2---6
+      if ((**(hand_card+i)).value == card_curr_value1){continue;}
+      if ((**(hand_card+i)).value == card_curr_value1 -1)
+      {
+        card_curr_value1= (**(hand_card+i)).value ;
+        count++;
+      }
     }
-    if (count >=5){return 1;}
-    else {return 0;}
+      if (count >=5){return 1;}
+      else {return 0;}
   }
   // for fs =others
   else
