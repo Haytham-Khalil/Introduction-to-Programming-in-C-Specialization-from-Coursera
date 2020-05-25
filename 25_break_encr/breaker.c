@@ -5,7 +5,7 @@
 int decrypt(FILE *f)
 {
     int key = 0;
-    char array_char[256]={0};
+    int array_char[256]={0};
     char c;
     while ((c=fgetc(f))!= EOF)
     {
@@ -18,12 +18,12 @@ int decrypt(FILE *f)
     int index=0;
     for (int i =0; i<256;i++)
     {
-        if (array_char[i]>=array_char[index])
+        if (array_char[i]>array_char[index])
         {
             index =i;
         }
     }
-    char temp = index -'a';
+    int temp = index -'a';
     if (temp>=1 && temp <=3)
     {
         key = 22 +temp;
