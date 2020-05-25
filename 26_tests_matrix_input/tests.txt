@@ -7,5 +7,7 @@ input6.txt
 input7.txt
 input8.txt
 input9.txt
+input11.txt
+input12.txt
 input100.txt
 3 input1.txt
