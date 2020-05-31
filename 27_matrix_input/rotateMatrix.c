@@ -34,14 +34,14 @@ int check_matrix(FILE *f)
         for (int i =0;i<10;i++)
         {
             if (c == '\n') {
-                printf("char error");
+                fprintf(stderr,"char error");
                 return 0;
             }
             c = fgetc(f);
         }
         if (c != '\n')
         {
-            printf("more than 10 char in a line");
+            fprintf(stderr,"more than 10 char in a line");
             return 0;
         }
         row_num++;
@@ -52,7 +52,7 @@ int check_matrix(FILE *f)
     }
     else
     {
-        printf("do not have 10 row");
+        fprintf(stderr,"do not have 10 row");
         return 0;
     }
     
