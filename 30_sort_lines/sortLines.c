@@ -59,14 +59,13 @@ int main(int argc, char ** argv) {
   }
 
 
-  if (argc ==1)
+  else if (argc ==1)
   {
     char * line = NULL;
     size_t line_size =0;
-    size_t len = 0;
     char ** str_array = NULL;
     size_t idx =0;
-    while ((len= getline(&line,&line_size,stdin))>=0)
+    while (getline(&line,&line_size,stdin)>=0)
     {
       str_array = realloc(str_array,(idx+1)*sizeof(*str_array));
       str_array[idx] = line;
