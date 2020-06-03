@@ -59,7 +59,7 @@ int main(int argc, char ** argv) {
   }
 
 
-  else if (argc ==1)
+  if (argc ==1)
   {
     char * line = NULL;
     size_t line_size =0;
