@@ -425,15 +425,22 @@ unsigned * get_match_counts(deck_t * hand){
      2  2  2  2  1  3  3  3
    because there are 2 kings, 2 queens,
    1 ten, and 3 nines.*/
-  unsigned* arr=malloc(hand->n_cards*sizeof(*arr));
-  for(int i=0 ; i< hand->n_cards ; i++){
-    card_t x = *(hand->cards[i]);
-    unsigned  count=0;
-    for(int j=0 ; j< hand->n_cards;j++){
-      if(com1(*(hand->cards[j]),x)) count ++;
-    }
-    arr[i] = count;}
-  return arr;
+   size_t len = hand->n_cards;
+   card_t ** card_in_hand = hand->cards;
+
+   unsigned * match = malloc(len*sizeof(*match));
+   for (size_t i=0;i<len;i++){
+     card_t * card = card_in_hand[i];
+     unsigned count =0;
+     for (size_t j=0;j<len;j++){
+       if(card_in_hand[j]->value == card->value){
+         count++;
+       }
+     }
+      count--;
+      match[i]=count;
+   }
+  return match;
 
 }
 
