@@ -437,7 +437,6 @@ unsigned * get_match_counts(deck_t * hand){
          count++;
        }
      }
-      count--;
       match[i]=count;
    }
   return match;
