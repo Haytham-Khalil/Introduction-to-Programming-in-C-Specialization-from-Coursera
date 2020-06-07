@@ -409,7 +409,33 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 //implementation in eval-c4.o) so that the
 //other functions we have provided can make
 //use of get_match_counts.
-unsigned * get_match_counts(deck_t * hand) ;
+unsigned * get_match_counts(deck_t * hand){
+  /*Given a hand (deck_t) of cards, this function
+   allocates an array of unsigned ints with as
+   many elements as there are cards in the hand.
+   It then fills in this array with
+   the "match counts" of the corresponding cards.
+   That is, for each card in the original hand,
+   the value in the match count array
+   is how many times a card of the same
+   value appears in the hand.  For example,
+   given
+     Ks Kh Qs Qh 0s 9d 9c 9h
+   This function would return
+     2  2  2  2  1  3  3  3
+   because there are 2 kings, 2 queens,
+   1 ten, and 3 nines.*/
+  unsigned* arr=malloc(hand->n_cards*sizeof(*arr));
+  for(int i=0 ; i< hand->n_cards ; i++){
+    card_t x = *(hand->cards[i]);
+    unsigned  count=0;
+    for(int j=0 ; j< hand->n_cards;j++){
+      if(com1(*(hand->cards[j]),x)) count ++;
+    }
+    arr[i] = count;}
+  return arr;
+
+}
 
 // We provide the below functions.  You do NOT need to modify them
 // In fact, you should not modify them!
