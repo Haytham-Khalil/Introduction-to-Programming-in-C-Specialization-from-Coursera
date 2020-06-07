@@ -115,7 +115,7 @@ void assert_full_deck(deck_t * d) {
 void add_card_to(deck_t * deck, card_t c){
 /*Add the particular card to the given deck (which will
    involve reallocing the array of cards in that deck).*/
-   deck->cards = realloc(deck->cards,(deck->n_cards+1)sizeof(*deck->cards));
+   deck->cards = realloc(deck->cards,(deck->n_cards+1)*sizeof(*deck->cards));
    card_t * one_card = malloc(sizeof(one_card));
    one_card->value = c.value;
    one_card->suit = c.suit;
@@ -207,7 +207,7 @@ void free_deck(deck_t * deck){
    need to to avoid memory leaks.*/
 
    for ( size_t i=0;i<(deck->n_cards);i++){
-     free(deck->cards[i])
+     free(deck->cards[i]);
    }
    free(deck->cards);
    free(deck);
