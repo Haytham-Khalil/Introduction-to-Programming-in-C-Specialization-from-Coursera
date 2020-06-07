@@ -1,0 +1,13 @@
+Grading at Sun Jun  7 16:09:40 UTC 2020
+Compiling deck.c -> deck.o
+deck.c: In function ‘add_card_to’:
+deck.c:118:55: error: expected ‘)’ before ‘sizeof’
+    deck->cards = realloc(deck->cards,(deck->n_cards+1)sizeof(*deck->cards));
+                                                       ^
+deck.c: In function ‘free_deck’:
+deck.c:211:4: error: expected ‘;’ before ‘}’ token
+    }
+    ^
+Compilation of deck.c failed
+
+Overall Grade: F
