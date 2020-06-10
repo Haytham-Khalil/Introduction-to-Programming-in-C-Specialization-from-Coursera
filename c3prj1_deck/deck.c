@@ -155,7 +155,7 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
   deck_to_make->cards= NULL;
   deck_to_make->n_cards =0;
 
-  for ( unsigned int i =0; i<52;i++){
+  for ( unsigned i =0; i<52;i++){
     card_t card_to_add = card_from_num(i);
     if (deck_contains(excluded_cards,card_to_add)==0){
       add_card_to(deck_to_make,card_to_add);
