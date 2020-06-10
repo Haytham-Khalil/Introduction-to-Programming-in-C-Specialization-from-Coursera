@@ -1,10 +1,10 @@
-
 #include<string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
 #include "deck.h"
 #include "cards.h"
+#include<ctype.h>
 #include "future.h"
 size_t strToInt(char * str){
   size_t len = strlen(str);
